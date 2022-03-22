@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    android:background="@color/white">
+
+    <TextView
+        android:id="@+id/txtResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textSize="20sp"
+        android:layout_margin="20sp"
+        android:textColor="@color/black"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="5sp"
+        android:paddingRight="5sp">
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:text="+"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="2sp"
+        android:layout_weight="1"
+        android:textColor="@color/white"/>
+
+    <Button
+        android:id="@+id/btnSubtract"
+        android:textSize="20sp"
+        android:text="-"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        android:layout_margin="2sp"/>
+
+    <Button
+        android:id="@+id/btnDivivide"
+        android:text="/"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        android:layout_margin="2sp"/>
+
+    <Button
+        android:id="@+id/btnMultiply"
+        android:text="*"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_weight="1"
+        android:layout_margin="2sp"/>
+
+    </LinearLayout>
+
+   <LinearLayout
+         android:id="@+id/Inputs"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:gravity="center_vertical"
+         android:paddingRight="5sp"
+         android:paddingLeft="5sp">
+
+      <Button
+          android:id="@+id/addInput"
+          android:text="Add Input"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:textSize="15sp"
+          android:layout_margin="2sp"
+          android:textColor="@color/white"/>
+
+       <EditText
+           android:id="@+id/edtFirstInput"
+           android:hint="@string/first_input"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="20sp"
+           android:textColorHint="#696969"
+           android:textColor="@color/black"
+           android:inputType="number"
+           android:layout_margin="10sp"/>
+
+       <EditText
+           android:id="@+id/edtSecondInput"
+           android:hint="@string/second_input"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="20sp"
+           android:textColorHint="#696969"
+           android:textColor="@color/black"
+           android:inputType="number"
+           android:layout_margin="10sp"/>
+
+
+   </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+
