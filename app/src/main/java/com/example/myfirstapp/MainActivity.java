@@ -21,11 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnAddInput, btnAdd, btnSubtract, btnDivide, btnMultiply;
     private LinearLayout Inputs;
-    private TextView Result;
+    private TextView txtResult;
     private EditText Input1, Input2;
     int ans;
 
-    ArrayList<EditText> editTexts = new ArrayList<>();
+    ArrayList<EditText> arrEditTexts = new ArrayList<>();
+    ArrayList<String> arrValues = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
         btnAddInput = findViewById(R.id.addInput);
         btnAdd = findViewById(R.id.btnAdd);
-        btnDivide = findViewById(R.id.btnDivivide);
+        btnDivide = findViewById(R.id.btnDivide);
         btnMultiply = findViewById(R.id.btnMultiply);
         Inputs = findViewById(R.id.Inputs);
-        Result = findViewById(R.id.txtResult);
+        txtResult = findViewById(R.id.txtResult);
         Input1 = findViewById(R.id.edtFirstInput);
         Input2 = findViewById(R.id.edtSecondInput);
 
 
         btnAddInput.setOnClickListener(new AddInputs());
-        btnAdd.setOnClickListener(new AddValues());
+        btnAdd.setOnClickListener(new btnAdd());
 
     }
 
@@ -58,32 +59,32 @@ public class MainActivity extends AppCompatActivity {
             addInputs.setTextSize(20);
             addInputs.setInputType(InputType.TYPE_CLASS_NUMBER);
             Inputs.addView(addInputs);
-            editTexts.add(addInputs);
-
+            arrEditTexts.add(addInputs);
         }
     }
 
-    private class AddValues implements View.OnClickListener {
+    private class btnAdd implements View.OnClickListener {
+
         @Override
         public void onClick(View view) {
-            TextView Result = new TextView(MainActivity.this);
-            if (editTexts.size() > 2) {
+
+            if(arrEditTexts.size() == 0) {
+
                 double num1 = Double.parseDouble(Input1.getText().toString());
-                double num2 = Double.parseDouble(Input2.getText().toString());
+                double num2 = Double.parseDouble(Input1.getText().toString());
                 double sum = num1 + num2;
-                Result.setText(Double.toString(sum));
+                txtResult.setText(Double.toString(sum));
+
             }
-
             else {
-                String n1 = Input1.getText().toString();
-                int num1 = Integer.parseInt(n1);
-
-                String n2 = Input2.getText().toString();
-                int num2 = Integer.parseInt(n2);
-
-                int sum=num1+num2;
-
-                Result.setText("Success");
+                double extraNum1 = Double.parseDouble(Input1.getText().toString());
+                double extraNum2 = Double.parseDouble(Input1.getText().toString());
+                double extraSum = extraNum1 + extraNum2;
+                for (int i = 0; i <= arrEditTexts.size(); i++) {
+                    double extraNum = Double.parseDouble(arrEditTexts.get(i).getText().toString());
+                    extraSum = extraSum + extraNum;
+                }
+                txtResult.setText(Double.toString(extraSum));
             }
         }
     }
