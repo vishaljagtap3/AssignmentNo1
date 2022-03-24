@@ -46,7 +46,7 @@
         android:layout_margin="2sp"/>
 
     <Button
-        android:id="@+id/btnDivivide"
+        android:id="@+id/btnDivide"
         android:text="/"
         android:textSize="20sp"
         android:layout_width="wrap_content"
