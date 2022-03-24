@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     int ans;
 
     ArrayList<EditText> arrEditTexts = new ArrayList<>();
-    ArrayList<String> arrValues = new ArrayList<String>();
+    ArrayList<String> arrValues = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
                 double extraNum2 = Double.parseDouble(Input1.getText().toString());
                 double extraSum = extraNum1 + extraNum2;
                 for (int i = 0; i <= arrEditTexts.size(); i++) {
-                    double extraNum = Double.parseDouble(arrEditTexts.get(i).getText().toString());
-                    extraSum = extraSum + extraNum;
+                    arrValues.add(arrEditTexts.get(i).getText().toString());
                 }
                 txtResult.setText(Double.toString(extraSum));
             }
